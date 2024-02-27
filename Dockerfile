@@ -5,7 +5,7 @@ COPY src/* /TargetAccountPlanner/src
 
 RUN dnf -y install python3-pip && \
       dnf clean all
-RUN pip3 install -r /opt/hello/requirements.txt && \
+RUN pip3 install -r /TargetAccountPlanner/requirements.txt && \
       rm -rf /root/.cache
 # Set the working directory to where we copied the code.
 WORKDIR /TargetAccountPlanner
