@@ -1,4 +1,4 @@
-FROM registry.redhat.io/jboss-eap-7/eap72-openshift
+FROM registry.redhat.io/jboss-eap-7/eap74-openjdk11-openshift-rhel8
 
 COPY target/*.war $JBOSS_HOME/standalone/deployments/
 #COPY drivers/*.jar $JBOSS_HOME/standalone/deployments/
