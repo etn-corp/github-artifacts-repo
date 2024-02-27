@@ -34,4 +34,4 @@ COPY $JBOSS_Deploy $JBOSS_HOME/standalone/deployments/
 RUN chown -R $JBOSS_USER:$JBOSS_USER ${JBOSS_HOME}/standalone/deployments/
 
 USER $JBOSS_USER
-CMD /bin/bash
+CMD /bin
