@@ -2,7 +2,7 @@ FROM registry.access.redhat.com/ubi8/ubi
 
 ENV JBOSS_USER=jbosseap
 ENV JBOSS_HOME /opt/eap
-ENV JBOSS_Deploy=/targetTargetAccountPlanner.war
+ENV JBOSS_Deploy=/target/TargetAccountPlanner.war
 ENV EAP_Module /opt/eap/modules/com/microsoft/sqlserver
 
 # Install sqlserver module
