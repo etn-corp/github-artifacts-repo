@@ -1,9 +1,7 @@
 FROM registry.redhat.io/jboss-eap-7/eap72-openshift
 
-ENV DISABLE_EMBEDDED_JMS_BROKER=true
-
 COPY target/*.war $JBOSS_HOME/standalone/deployments/
-#COPY drivers/*.jar $JBOSS_HOME/standalone/deployments
+#COPY drivers/*.jar $JBOSS_HOME/standalone/deployments/
 COPY standalone-openshift.xml $JBOSS_HOME/standalone/configuration/standalone-openshift.xml
 
 USER root
