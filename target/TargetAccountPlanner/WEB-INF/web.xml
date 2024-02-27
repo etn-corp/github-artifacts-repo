@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE web-app PUBLIC '-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN' 'http://java.sun.com/j2ee/dtds/web-app_2_2.dtd'>
+
+<web-app>
+
+	<display-name>Sales and Marketing Resource Channel</display-name>
+    <description>Sales and Marketing Resource Channel</description>
+
+    <!-- This marks the application as distributable -->
+    <distributable></distributable>
+
+	<!--  
+		  Please allow log4j-init to be the only Servlet
+		  that has load-on-startup set to < 2. That will cause
+          it to be loaded first.
+	-->
+	<servlet>
+		<servlet-name>AcctPlanCharts</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.AcctPlanCharts
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>AcctPlanReport</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.AcctPlanReport
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CustChanges</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.CustChanges
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>OEMAcctPlan</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.OEMAcctPlan
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>TargetProjectPopup</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.TargetProjectPopup
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	
+
+	<servlet>
+		<servlet-name>AcctPlanProjRpt</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.AcctPlanProjRpt
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Suggestions</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.Suggestions
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<!--servlet>
+		<servlet-name>AcctPlanStdRptChart</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.AcctPlanStdRptChart
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet-->
+
+	<servlet>
+		<servlet-name>SMRCHome</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.SMRCHome
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CustomerListing</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.CustomerListing
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CSF</servlet-name>
+		<servlet-class>com.eaton.electrical.smrc.CSF</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>DistributorSignup</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.DistributorSignup
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>DistributorProductLoadingModule</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.DistributorProductLoadingModule
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>DistributorProductLoadingModuleHistory</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.DistributorProductLoadingModuleHistory
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>AccountProfile</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.AccountProfile
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Contacts</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.Contacts
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ParentBrowse</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.ParentBrowse
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>SEBrowse</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.SEBrowse
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CustomerBrowse</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.CustomerBrowse
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>SegmentSelect</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.SegmentSelect
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ModifySegment</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.ModifySegment
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>AccountToolbox</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.AccountToolbox
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>StandardReport</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.StandardReport
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>CustomerMarketShareReport</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.CustomerMarketShareReport
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>	
+	
+	<servlet>
+		<servlet-name>StandardReportChart</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.StandardReportChart
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ZipcodeBrowse</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.ZipcodeBrowse
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CustomerVisits</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.CustomerVisits
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>UserOverride</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.UserOverride
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>AcctPlanAssocUsersPopup</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.AcctPlanAssocUsersPopup
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ProductSampleRequest</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.ProductSampleRequest
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>TargetMarketSetup</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.TargetMarketSetup
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+        <servlet>
+		<servlet-name>TargetMarketCustomerBrowse</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.TargetMarketCustomerBrowse
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+        <servlet>
+		<servlet-name>TargetMarketReportResults</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.TargetMarketReportResults
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>CustomerVisitTaskUpdate</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.CustomerVisitTaskUpdate
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>DistrictHomeSalesTable</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.DistrictHomeSalesTable
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>UsageReportResults</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.UsageReportResults
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>PendingApprovals</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.PendingApprovals
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>ConnectRequestIt</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.ConnectRequestIt
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>TaskAttachments</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.TaskAttachments
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>TaskAttachmentDisplay</servlet-name>
+		<servlet-class>
+			com.eaton.electrical.smrc.TaskAttachmentDisplay
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>log4j-init</servlet-name>
+		<servlet-class>com.eaton.electrical.smrc.Log4jInit</servlet-class>
+
+		<init-param>
+			<param-name>log4j-init-file</param-name>
+			<param-value>C:/Software/jboss-eap-7.0.0/jboss-eap-7.0/modules/tap/main/common/com/eaton/electrical/smrc/log4j.properties</param-value>
+		</init-param>
+
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CewolfServlet</servlet-name>
+		<servlet-class>de.laures.cewolf.CewolfRenderer</servlet-class>
+	</servlet>
+  <servlet>
+    <servlet-name>ResetWorkflow</servlet-name>
+    <servlet-class>com.eaton.electrical.smrc.ResetWorkflow</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CommitmentAuthorization</servlet-name>
+    <servlet-class>com.eaton.electrical.smrc.CommitmentAuthorization</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CommitmentApproveReject</servlet-name>
+    <servlet-class>com.eaton.electrical.smrc.CommitmentApproveReject</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ModifySegmentApproveReject</servlet-name>
+    <servlet-class>com.eaton.electrical.smrc.ModifySegmentApproveReject</servlet-class>
+  </servlet>
+  <!-- <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>VmsGetDistrictByZip</servlet-name>
+    <servlet-class>com.eaton.electrical.smrc.VmsGetDistrictByZip</servlet-class>
+  </servlet> -->
+
+
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>AcctPlanCharts</servlet-name>
+		<url-pattern>/AcctPlanCharts</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AcctPlanReport</servlet-name>
+		<url-pattern>/AcctPlanReport</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CustChanges</servlet-name>
+		<url-pattern>/CustChanges</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>OEMAcctPlan</servlet-name>
+		<url-pattern>/OEMAcctPlan</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>TargetProjectPopup</servlet-name>
+		<url-pattern>/TargetProjectPopup</url-pattern>
+	</servlet-mapping>
+
+	
+
+	<servlet-mapping>
+		<servlet-name>AcctPlanProjRpt</servlet-name>
+		<url-pattern>/AcctPlanProjRpt</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Suggestions</servlet-name>
+		<url-pattern>/Suggestions</url-pattern>
+	</servlet-mapping>
+
+	<!--servlet-mapping>
+		<servlet-name>AcctPlanStdRptChart</servlet-name>
+		<url-pattern>/AcctPlanStdRptChart</url-pattern>
+	</servlet-mapping-->
+
+	<servlet-mapping>
+		<servlet-name>SMRCHome</servlet-name>
+		<url-pattern>/SMRCHome</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CustomerListing</servlet-name>
+		<url-pattern>/CustomerListing</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CSF</servlet-name>
+		<url-pattern>/CSF</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>DistributorSignup</servlet-name>
+		<url-pattern>/DistributorSignup</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>DistributorProductLoadingModule</servlet-name>
+		<url-pattern>/DistributorProductLoadingModule</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>DistributorProductLoadingModuleHistory</servlet-name>
+		<url-pattern>/DistributorProductLoadingModuleHistory</url-pattern>
+	</servlet-mapping>
+	
+
+	<servlet-mapping>
+		<servlet-name>AccountProfile</servlet-name>
+		<url-pattern>/AccountProfile</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Contacts</servlet-name>
+		<url-pattern>/Contacts</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ParentBrowse</servlet-name>
+		<url-pattern>/ParentBrowse</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>SEBrowse</servlet-name>
+		<url-pattern>/SEBrowse</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CustomerBrowse</servlet-name>
+		<url-pattern>/CustomerBrowse</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>SegmentSelect</servlet-name>
+		<url-pattern>/SegmentSelect</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ModifySegment</servlet-name>
+		<url-pattern>/ModifySegment</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>AccountToolbox</servlet-name>
+		<url-pattern>/AccountToolbox</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>StandardReport</servlet-name>
+		<url-pattern>/StandardReport</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CustomerMarketShareReport</servlet-name>
+		<url-pattern>/CustomerMarketShareReport</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ZipcodeBrowse</servlet-name>
+		<url-pattern>/ZipcodeBrowse</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CustomerVisits</servlet-name>
+		<url-pattern>/CustomerVisits</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>UserOverride</servlet-name>
+		<url-pattern>/UserOverride</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AcctPlanAssocUsersPopup</servlet-name>
+		<url-pattern>/AcctPlanAssocUsersPopup</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>TargetMarketSetup</servlet-name>
+		<url-pattern>/TargetMarketSetup</url-pattern>
+	</servlet-mapping>
+        
+        <servlet-mapping>
+		<servlet-name>TargetMarketCustomerBrowse</servlet-name>
+		<url-pattern>/TargetMarketCustomerBrowse</url-pattern>
+	</servlet-mapping>
+        
+        <servlet-mapping>
+		<servlet-name>TargetMarketReportResults</servlet-name>
+		<url-pattern>/TargetMarketReportResults</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ProductSampleRequest</servlet-name>
+		<url-pattern>/ProductSampleRequest</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>StandardReportChart</servlet-name>
+		<url-pattern>/StandardReportChart</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>CustomerVisitTaskUpdate</servlet-name>
+		<url-pattern>/CustomerVisitTaskUpdate</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DistrictHomeSalesTable</servlet-name>
+		<url-pattern>/DistrictHomeSalesTable</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UsageReportResults</servlet-name>
+		<url-pattern>/UsageReportResults</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>PendingApprovals</servlet-name>
+		<url-pattern>/PendingApprovals</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ConnectRequestIt</servlet-name>
+		<url-pattern>/ConnectRequestIt</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TaskAttachments</servlet-name>
+		<url-pattern>/TaskAttachments</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TaskAttachmentDisplay</servlet-name>
+		<url-pattern>/TaskAttachmentDisplay</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CewolfServlet</servlet-name>
+		<url-pattern>/cewolf/*</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResetWorkflow</servlet-name>
+    <url-pattern>/ResetWorkflow</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CommitmentAuthorization</servlet-name>
+    <url-pattern>/CommitmentAuthorization</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CommitmentApproveReject</servlet-name>
+    <url-pattern>/CommitmentApproveReject</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ModifySegmentApproveReject</servlet-name>
+    <url-pattern>/ModifySegmentApproveReject</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>VmsGetDistrictByZip</servlet-name>
+    <url-pattern>/servlet/VmsGetDistrictByZip</url-pattern>
+  </servlet-mapping>
+
+	<session-config>
+		<session-timeout>120</session-timeout>
+	</session-config>
+	
+	<!-- If URL gives a directory but no filename, try index.jsp
+       first and index.html second. If neither is found,
+       the result is server specific (e.g., a directory 
+       listing).  Order of elements in web.xml matters. 
+       welcome-file-list needs to come after servlet but
+       before error-page.
+  	-->
+  	<welcome-file-list>
+    	<welcome-file>index.html</welcome-file>
+    	<welcome-file>index.jsp</welcome-file>
+  	</welcome-file-list>
+
+	<error-page>
+    	<error-code>500</error-code>
+    	<location>/SMRCErrorPage.jsp</location>
+  	</error-page>
+  	
+  	
+</web-app>
