@@ -4,7 +4,7 @@
 FROM rhel
 
 # file author / maintainer
-MAINTAINER "FirstName LastName" "emailaddress@gmail.com"
+MAINTAINER "Urvashi Sharma" "urvashisharma@eaton.com"
 
 # update OS
 RUN yum -y update && \
