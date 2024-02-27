@@ -7,8 +7,8 @@ ENV EAP_Module /opt/eap/modules/com/microsoft/sqlserver
 
 # Install sqlserver module
 RUN mkdir -p ${EAP_Module}/main/
-#ADD sqljdbc42.jar ${EAP_Module}/main/
-#ADD module.xml ${EAP_Module}/main/
+ADD sqljdbc42.jar ${EAP_Module}/main/
+ADD module.xml ${EAP_Module}/main/
 
 USER root
 
