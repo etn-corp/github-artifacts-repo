@@ -1,4 +1,4 @@
-FROM registry.redhat.io/jboss-eap-7/eap74-openjdk11-openshift-rhel8
+registry.redhat.io/jboss-eap-7/eap72-openshift
 
 ENV DISABLE_EMBEDDED_JMS_BROKER=true
 
