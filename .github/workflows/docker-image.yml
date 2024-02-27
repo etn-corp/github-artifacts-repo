@@ -1,7 +1,7 @@
 name: Docker Image CI
 env:
-  APP_NAME: ""
-  IMAGE_TAGS: ""
+  APP_NAME: "target-account-planner"
+  IMAGE_TAGS: "latest"
 
 on:
   push:
