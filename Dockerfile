@@ -1,31 +1,21 @@
-# By default, build on JDK 17 on CentOS 7.
-ARG jdk=17
-# Red Hat UBI 9 (ubi9-minimal) should be used on JDK 20 and later.
-ARG dist=centos7
-FROM eclipse-temurin:${jdk}-${dist}
+FROM jboss/base-jdk:7
 
-LABEL org.opencontainers.image.source=https://github.com/jboss-dockerfiles/wildfly org.opencontainers.image.title=wildfly org.opencontainers.imag.url=https://github.com/jboss-dockerfiles/wildfly org.opencontainers.image.vendor=WildFly
-
-WORKDIR /opt/jboss
-
-RUN groupadd -r jboss -g 1000 && useradd -u 1000 -r -g jboss -m -d /opt/jboss -s /sbin/nologin -c "JBoss user" jboss && \
-    chmod 755 /opt/jboss
-
-# Set the WILDFLY_VERSION env variable
-ENV WILDFLY_VERSION 31.0.0.Final
-ENV WILDFLY_SHA1 5d02503c696c230d0803456c29d03d60776da339
-ENV JBOSS_HOME /opt/jboss/wildfly
+# Set the JBOSSAS_VERSION env variable
+ENV JBOSSAS_MAIN_VERSION 6.1
+ENV JBOSSAS_VERSION 6.1.0.Final
+ENV JBOSSAS_SHA1 d6cf1c809fd24d084939a1e18df4f8cbb04e10fb
+ENV JBOSS_HOME /opt/jboss/as
 
 USER root
 
-# Add the WildFly distribution to /opt, and make wildfly the owner of the extracted tar content
+# Add the JBoss AS distribution to /opt, and make jboss the owner of the extracted tar content
 # Make sure the distribution is available from a well-known place
 RUN cd $HOME \
-    && curl -L -O https://github.com/wildfly/wildfly/releases/download/$WILDFLY_VERSION/wildfly-$WILDFLY_VERSION.tar.gz \
-    && sha1sum wildfly-$WILDFLY_VERSION.tar.gz | grep $WILDFLY_SHA1 \
-    && tar xf wildfly-$WILDFLY_VERSION.tar.gz \
-    && mv $HOME/wildfly-$WILDFLY_VERSION $JBOSS_HOME \
-    && rm wildfly-$WILDFLY_VERSION.tar.gz \
+    && curl -O http://download.jboss.org/jbossas/$JBOSSAS_MAIN_VERSION/jboss-as-distribution-$JBOSSAS_VERSION.zip \
+    && sha1sum jboss-as-distribution-$JBOSSAS_VERSION.zip | grep $JBOSSAS_SHA1 \
+    && unzip jboss-as-distribution-$JBOSSAS_VERSION.zip \
+    && mv $HOME/jboss-$JBOSSAS_VERSION $JBOSS_HOME \
+    && rm jboss-as-distribution-$JBOSSAS_VERSION.zip \
     && chown -R jboss:0 ${JBOSS_HOME} \
     && chmod -R g+rw ${JBOSS_HOME}
 
@@ -34,9 +24,9 @@ ENV LAUNCH_JBOSS_IN_BACKGROUND true
 
 USER jboss
 
-# Expose the ports in which we're interested
+# Expose the ports we're interested in
 EXPOSE 8080
 
 # Set the default command to run on boot
-# This will boot WildFly in standalone mode and bind to all interfaces
-CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0"]
+# This will boot JBoss AS in the standalone mode and bind to all interface
+CMD ["/opt/jboss/as/bin/run.sh", "-b", "0.0.0.0"]
