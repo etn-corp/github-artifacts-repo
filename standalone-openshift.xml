@@ -140,34 +140,16 @@
         <subsystem xmlns="urn:jboss:domain:bean-validation:1.0"/>
         <subsystem xmlns="urn:jboss:domain:datasources:6.0">
             <datasources>
-                <datasource jndi-name="java:/datasources/MysqlDS" pool-name="MysqlDS" enabled="true">
-                    <connection-url>${env.MYSQL_URL}</connection-url>
-                    <driver>mysql-connector-java-8.0.20.jar</driver>
+                <datasource jndi-name="java:/tapDB" pool-name="tapDB" enabled="true">
+                    <connection-url>jdbc:oracle:thin:@egsmalld-lsnr-db.tcc.etn.com:1521:WTCRD810</connection-url>
+                    <driver>oracle</driver>
                     <pool>
                         <min-pool-size>5</min-pool-size>
                         <max-pool-size>20</max-pool-size>
                     </pool>
                     <security>
-                        <user-name>${env.MYSQL_USERNAME}</user-name>
-                        <password>${env.MYSQL_PASSWORD}</password>
-                    </security>
-                    <validation>
-                        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLValidConnectionChecker"/>
-                        <validate-on-match>true</validate-on-match>
-                        <background-validation>false</background-validation>
-                        <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLExceptionSorter"/>
-                    </validation>
-                </datasource>
-                <datasource jndi-name="java:/datasources/PostgresqlDS" pool-name="PostgresqlDS" enabled="true">
-                    <connection-url>${env.PGSQL_URL}</connection-url>
-                    <driver>postgresql-42.2.12.jar</driver>
-                    <pool>
-                        <min-pool-size>5</min-pool-size>
-                        <max-pool-size>20</max-pool-size>
-                    </pool>
-                    <security>
-                        <user-name>${env.PGSQL_USERNAME}</user-name>
-                        <password>${env.PGSQL_PASSWORD}</password>
+                        <user-name>OEMAPNEWUSER</user-name>
+                        <password>sdfjhl758</password>
                     </security>
                 </datasource>
             </datasources>
