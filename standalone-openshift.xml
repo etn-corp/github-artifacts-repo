@@ -140,7 +140,7 @@
         <subsystem xmlns="urn:jboss:domain:bean-validation:1.0"/>
         <subsystem xmlns="urn:jboss:domain:datasources:6.0">
             <datasources>
-                <datasource jndi-name="java:/tapDB" pool-name="tapDB" enabled="true">
+                <datasource jndi-name="java:/datasources/tapDB" pool-name="tapDB" enabled="true">
                     <connection-url>jdbc:oracle:thin:@egsmalld-lsnr-db.tcc.etn.com:1521:WTCRD810</connection-url>
                     <driver>oracle</driver>
                     <pool>
