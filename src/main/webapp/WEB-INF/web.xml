@@ -330,7 +330,7 @@
 
 		<init-param>
 			<param-name>log4j-init-file</param-name>
-			<param-value>C:/Users/E0773739/Downloads/modules 1/tap/main/common/com/eaton/electrical/smrc/log4j.properties</param-value>
+			<param-value>${catalina.home}/webapps/TargetAccountPlanner/WEB-INF/classes/com/eaton/electrical/smrc/log4j.properties</param-value>
 		</init-param>
 
 		<load-on-startup>1</load-on-startup>
