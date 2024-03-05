@@ -585,10 +585,10 @@
     <servlet-name>ModifySegmentApproveReject</servlet-name>
     <url-pattern>/ModifySegmentApproveReject</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
+  <!-- <servlet-mapping>
     <servlet-name>VmsGetDistrictByZip</servlet-name>
     <url-pattern>/servlet/VmsGetDistrictByZip</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
 
 	<session-config>
 		<session-timeout>120</session-timeout>
