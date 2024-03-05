@@ -239,9 +239,9 @@
 				<failOnMissingWebXml>false</failOnMissingWebXml>
 				<archive>
 				 <addMavenDescriptor>false</addMavenDescriptor>
-            	<!--	<manifestEntries>
+            		<manifestEntries>
               			<Dependencies>tap,vms</Dependencies>
-            		</manifestEntries>-->
+            		</manifestEntries>
           		</archive>
           		<packagingExcludes>**/db.properties,**/TapPortal.xml</packagingExcludes>
 			</configuration>
