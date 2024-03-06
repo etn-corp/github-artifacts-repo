@@ -10,7 +10,7 @@ EXPOSE 8080
 
 ADD create_tomcat_context.sh /create_tomcat_context.sh
 ADD run.sh /run.sh
-#RUN chmod +x /*.sh
+RUN chmod +x /*.sh
 
 EXPOSE 8080
 CMD ["/run.sh"]
