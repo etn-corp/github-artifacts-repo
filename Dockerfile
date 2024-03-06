@@ -5,7 +5,8 @@ USER root
 RUN chmod 777 $CATALINA_HOME/conf
 RUN chmod 777 $CATALINA_HOME/webapps
 RUN chmod 777 $CATALINA_HOME/webapps.dist
-#ADD target/TargetAccountPlanner.war $CATALINA_HOME/webapps/
+
+ADD target/TargetAccountPlanner.war $CATALINA_HOME/webapps/
 ADD target/TargetAccountPlanner.war $CATALINA_HOME/webapps.dist/
 ADD drivers/ojdbc6.jar $CATALINA_HOME/lib/
 EXPOSE 8080
