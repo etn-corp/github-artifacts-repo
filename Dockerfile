@@ -12,7 +12,6 @@ ADD target/TargetAccountPlanner.war $CATALINA_HOME/webapps/
 ADD target/TargetAccountPlanner.war $CATALINA_HOME/webapps.dist/
 ADD drivers/ojdbc6.jar $CATALINA_HOME/lib/
 EXPOSE 8080
-#CMD ["catalina.sh", "run"]
 
 ADD create_tomcat_context.sh /create_tomcat_context.sh
 ADD run.sh /run.sh
