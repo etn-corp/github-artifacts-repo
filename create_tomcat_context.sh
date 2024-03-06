@@ -13,7 +13,8 @@ USER=${MYSQL_USER}
 PASSWORD=${MYSQL_PASSWORD}
 
 echo "=> add a JNDI datasource in Tomcat"
-RUN chmod 666 ${CATALINA_HOME}/conf/context.xml
+RUN chmod 777 ${CATALINA_HOME}/conf
+RUN chmod 777 ${CATALINA_HOME}/conf/context.xml
 sed -i -r 's/<\/Context>//' ${CATALINA_HOME}/conf/context.xml
 echo "<Resource name=\"${JNDI_NAME}\" auth=\"Container\" type=\"javax.sql.DataSource\"" >> ${CATALINA_HOME}/conf/context.xml
 echo 'maxTotal="100" maxIdle="30" maxWaitMillis="10000"' >> ${CATALINA_HOME}/conf/context.xml
