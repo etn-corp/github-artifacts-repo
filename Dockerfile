@@ -8,7 +8,7 @@ EXPOSE 8080
 #CMD ["catalina.sh", "run"]
 
 USER root
-RUN chgrp -R 0 $CATALINA_HOME/conf/  && chmod -R g=u $CATALINA_HOME/sconf/
+RUN chgrp -R 0 $CATALINA_HOME/conf/  && chmod -R g=u $CATALINA_HOME/conf/
 USER 185
 
 ADD create_tomcat_context.sh /create_tomcat_context.sh
