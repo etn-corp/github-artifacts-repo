@@ -41,7 +41,7 @@ public class SMRCConnectionPoolUtils {
 			}  
 			
 			try {
-				ds = (DataSource)jndiCntx.lookup("java:/tapDB");
+				ds = (DataSource)jndiCntx.lookup("java:/comp/env/jdbc/tapDB");
 			} catch (NamingException e) {
 				System.out.println("getConnection()---Error occured while doing the LOOKUP");
 				e.printStackTrace();

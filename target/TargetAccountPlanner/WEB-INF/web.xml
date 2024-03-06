@@ -6,7 +6,12 @@
 
 	<display-name>Sales and Marketing Resource Channel</display-name>
     <description>Sales and Marketing Resource Channel</description>
-
+	<resource-ref>
+		 <description>Oracle Datasource example</description>
+		 <res-ref-name>jdbc/tapDB</res-ref-name>
+		 <res-type>javax.sql.DataSource</res-type>
+		 <res-auth>Container</res-auth>
+	</resource-ref>
     <!-- This marks the application as distributable -->
     <distributable></distributable>
 

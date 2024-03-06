@@ -14,6 +14,7 @@ import com.eaton.electrical.smrc.exception.ProfileException;
 import com.eaton.electrical.smrc.service.*;
 import com.eaton.portal.sso.SSOAttribute;
 import com.eaton.portal.sso.SSOPortalUserFactory;
+import com.eaton.portal.sso.TagValue;
 
 
 /**
@@ -44,8 +45,9 @@ public class SMRCSession {
 	      //  FileOutputStream writer = new FileOutputStream(xmlFile);
 	        
 	        	        
-	        SSOAttribute[] attributes = SSOPortalUserFactory.getSSOAttributes(request,inputStream,0);
+	       /* SSOAttribute[] attributes = SSOPortalUserFactory.getSSOAttributes(request,inputStream,0);
 	        //xmlFile.delete();
+
 	        
 			if (attributes != null){
 				for (int i=0; i < attributes.length; i++)
@@ -68,7 +70,11 @@ public class SMRCSession {
 						user.setEmailAddress((String)attributes[i].getTagValue().getValue());
 					}    	  	
 				}	    	
-			}
+			}*/
+	    	user.setUserid("E0623366");
+	    	user.setFirstName("Kunal");
+	    	user.setLastName("Khairnar");
+	    	user.setEmailAddress("kunalvkhairnar@eaton.com");
 	    	
 			TransferBO t = new TransferBO();
 	    	LDAPAuth la = new LDAPAuth();
