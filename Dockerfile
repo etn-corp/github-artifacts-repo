@@ -12,8 +12,8 @@ ENV TZ=EDT
 
 COPY drivers/ojdbc6.jar $CATALINA_HOME/lib/
 COPY target/TargetAccountPlanner  $CATALINA_HOME/webapps/TargetAccountPlanner/
-COPY target/TargetAccountPlanner/WEB-INF/classes/dev/com  $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/
-COPY target/TargetAccountPlanner/WEB-INF/classes/dev/conf  $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/
+COPY target/TargetAccountPlanner/WEB-INF/classes/dev/com  $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/com
+COPY target/TargetAccountPlanner/WEB-INF/classes/dev/conf  $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/conf
 
 #ADD target/TargetAccountPlanner.war $CATALINA_HOME/webapps.dist/
 
