@@ -1,7 +1,7 @@
 FROM tomcat:9-jdk11-openjdk
 LABEL maintainer="urvashisharma@eaton.com"
 
-RUN chmod 777 $CATALINA_HOME/conf
+RUN chmod  777 $CATALINA_HOME/conf
 RUN chmod 777 $CATALINA_HOME/webapps
 RUN chmod 777 $CATALINA_HOME/webapps.dist
 
@@ -14,7 +14,7 @@ COPY target/TargetAccountPlanner  $CATALINA_HOME/webapps/TargetAccountPlanner/
 
 #ADD target/TargetAccountPlanner.war $CATALINA_HOME/webapps.dist/
 
-
+RUN chmod 777 $CATALINA_HOME/webapps/TargetAccountPlanner/
 COPY create_tomcat_context.sh /create_tomcat_context.sh
 COPY run.sh /run.sh
 RUN chmod +x /*.sh
