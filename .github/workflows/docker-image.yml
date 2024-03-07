@@ -54,7 +54,6 @@ jobs:
         with:
           image: ${{ env.APP_NAME }}
           tags: ${{ env.IMAGE_TAGS }}
-          build-args: ENV_NAME=${{vars.ENV_NAME }}
           dockerfiles: |
             ./Dockerfile
           
