@@ -11,7 +11,7 @@ RUN chmod 777 $CATALINA_HOME/webapps.dist
 ENV TZ=EDT
 
 ADD drivers/ojdbc6.jar $CATALINA_HOME/lib/
-ADD target/TargetAccountPlanner  $CATALINA_HOME/webapps/
+ADD target/TargetAccountPlanner  $CATALINA_HOME/webapps/TargetAccountPlanner/
 ADD target/TargetAccountPlanner/WEB-INF/classes/${env_name}  $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/
 #ADD target/TargetAccountPlanner.war $CATALINA_HOME/webapps.dist/
 
