@@ -10,15 +10,16 @@ RUN chmod 777 $CATALINA_HOME/webapps.dist
 
 ENV TZ=EDT
 
-ADD drivers/ojdbc6.jar $CATALINA_HOME/lib/
-ADD target/TargetAccountPlanner  $CATALINA_HOME/webapps/TargetAccountPlanner/
-ADD target/TargetAccountPlanner/WEB-INF/classes/${env_name}/com  $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/
-ADD target/TargetAccountPlanner/WEB-INF/classes/dev/conf  $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/
+COPY drivers/ojdbc6.jar $CATALINA_HOME/lib/
+COPY target/TargetAccountPlanner  $CATALINA_HOME/webapps/TargetAccountPlanner/
+COPY target/TargetAccountPlanner/WEB-INF/classes/${env_name}/com  $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/com
+COPY target/TargetAccountPlanner/WEB-INF/classes/${env_name}/conf  $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/conf
+
 #ADD target/TargetAccountPlanner.war $CATALINA_HOME/webapps.dist/
 
 
-ADD create_tomcat_context.sh /create_tomcat_context.sh
-ADD run.sh /run.sh
+COPY create_tomcat_context.sh /create_tomcat_context.sh
+COPY run.sh /run.sh
 RUN chmod +x /*.sh
 
 EXPOSE 8080
