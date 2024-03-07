@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "=> add a resources in Tomcat"
-cp $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/${env_name}/com  $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/com
-cp $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/${env_name}/conf  $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/conf
+cp -r $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/${env_name}/com  $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/com
+cp -r $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/${env_name}/conf  $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/conf
 
 echo "=> Done!"
 
