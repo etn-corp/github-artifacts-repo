@@ -45,7 +45,7 @@ public class SMRCSession {
 	      //  FileOutputStream writer = new FileOutputStream(xmlFile);
 	        
 	        	        
-	       /* SSOAttribute[] attributes = SSOPortalUserFactory.getSSOAttributes(request,inputStream,0);
+	        SSOAttribute[] attributes = SSOPortalUserFactory.getSSOAttributes(request,inputStream,0);
 	        //xmlFile.delete();
 
 	        
@@ -70,11 +70,12 @@ public class SMRCSession {
 						user.setEmailAddress((String)attributes[i].getTagValue().getValue());
 					}    	  	
 				}	    	
-			}*/
-	    	user.setUserid("E0623366");
-	    	user.setFirstName("Kunal");
-	    	user.setLastName("Khairnar");
-	    	user.setEmailAddress("kunalvkhairnar@eaton.com");
+			}
+			/*
+			 * user.setUserid("E0623366"); user.setFirstName("Kunal");
+			 * user.setLastName("Khairnar");
+			 * user.setEmailAddress("kunalvkhairnar@eaton.com");
+			 */
 	    	
 			TransferBO t = new TransferBO();
 	    	LDAPAuth la = new LDAPAuth();
@@ -93,7 +94,7 @@ public class SMRCSession {
 	    	
 			return new SessionProfile( userID, email, lName, fName, vistaID, street, city, state, zipCode, country);
 			
-	    } catch ( ProfileException pe ) {
+	    } catch ( Exception pe ) {
 		    
 			ResourceBundle rb = ResourceBundle.getBundle("com.eaton.electrical.smrc.SMRC");
 			
@@ -116,13 +117,13 @@ public class SMRCSession {
 			// User does not have access to the application
 			throw pe;
 		}
-	    catch ( Exception e ) 
+	 /*   catch ( Exception e ) 
 		{
 		    SMRCLogger.error("SMRCSession.getSessionProfile() ", e) ;
 		    throw e;
 	    
 	    
-		}
+		}*/
 	    finally
 	    {	    	
 	    if(inputStream!=null)inputStream.close();
