@@ -44,7 +44,10 @@ jobs:
         if: env.IMAGE_TAGS == ''
         run: |
           echo "IMAGE_TAGS=latest ${GITHUB_SHA::12}" | tee -a $GITHUB_ENV
-
+          
+      - name: Check out repository
+        uses: actions/checkout@v3
+        
       - name: Build from Dockerfile
         id: build-image
         uses: redhat-actions/buildah-build@v2
