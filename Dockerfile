@@ -14,7 +14,7 @@ COPY target/TargetAccountPlanner  $CATALINA_HOME/webapps/TargetAccountPlanner/
 
 #ADD target/TargetAccountPlanner.war $CATALINA_HOME/webapps.dist/
 
-RUN sudo chmod -R 777 $CATALINA_HOME/webapps/TargetAccountPlanner/
+RUN  chmod -R 777 $CATALINA_HOME/webapps/TargetAccountPlanner/
 COPY create_tomcat_context.sh /create_tomcat_context.sh
 COPY run.sh /run.sh
 RUN chmod +x /*.sh
