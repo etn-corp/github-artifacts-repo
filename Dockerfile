@@ -2,7 +2,7 @@ FROM tomcat:9-jdk11-openjdk
 LABEL maintainer="urvashisharma@eaton.com"
 
 ARG ENV_NAME
-ENV env_name = $ENV_NAME
+ENV env_name $ENV_NAME
 
 RUN chmod 777 $CATALINA_HOME/conf
 RUN chmod 777 $CATALINA_HOME/webapps
