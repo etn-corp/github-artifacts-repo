@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "=> add a resources in Tomcat"
 echo "=> Environment: ${env_name}"
+chmod -r 777 $CATALINA_HOME/webapps
 cp -r $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/${env_name}/com  $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/
 cp -r $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/${env_name}/conf  $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/
 
