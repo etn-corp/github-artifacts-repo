@@ -15,7 +15,7 @@ RUN chmod 777 $CATALINA_HOME/webapps
 RUN chmod 777 $CATALINA_HOME/webapps.dist
 
 ENV TZ=EDT
-
+FROM openjdk:14-slim
 COPY --from=build /workspace/target/*.war $CATALINA_HOME/webapps/
 COPY --from=build /workspace/target/*.war $CATALINA_HOME/webapps.dist/
 ADD drivers/ojdbc6.jar $CATALINA_HOME/lib/
