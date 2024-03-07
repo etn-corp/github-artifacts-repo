@@ -3,21 +3,22 @@ LABEL maintainer="urvashisharma@eaton.com"
 
 USER root 
 
+RUN chmod 777 $CATALINA_HOME/conf
+RUN chmod 777 $CATALINA_HOME/webapps
+RUN chmod 777 $CATALINA_HOME/webapps.dist
+ENV TZ=EDT
+
 RUN mkdir -p /workspace
 WORKDIR /workspace
 COPY pom.xml /workspace
 COPY src /workspace/src
-
 RUN mvn -B package --file pom.xml -DskipTests -Dskip
 
-RUN chmod 777 $CATALINA_HOME/conf
-RUN chmod 777 $CATALINA_HOME/webapps
-RUN chmod 777 $CATALINA_HOME/webapps.dist
-
-ENV TZ=EDT
 FROM openjdk:14-slim
+LABEL org.opencontainers.image.source="https://github.com/etn-corp/github-artifacts-repo"
 COPY --from=build /workspace/target/*.war $CATALINA_HOME/webapps/
 COPY --from=build /workspace/target/*.war $CATALINA_HOME/webapps.dist/
+
 ADD drivers/ojdbc6.jar $CATALINA_HOME/lib/
 EXPOSE 8080
 
