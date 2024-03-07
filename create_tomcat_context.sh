@@ -1,4 +1,9 @@
 #!/bin/bash
+echo "=> add a resources in Tomcat"
+cp target/TargetAccountPlanner/WEB-INF/classes/${env_name}/com  $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/com
+cp target/TargetAccountPlanner/WEB-INF/classes/${env_name}/conf  $CATALINA_HOME/webapps/TargetAccountPlanner/WEB-INF/classes/conf
+
+echo "=> Done!"
 
 echo "=> add a JNDI datasource in Tomcat"
 sed -i -r 's/<\/Context>//' ${CATALINA_HOME}/conf/context.xml
