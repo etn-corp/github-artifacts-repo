@@ -54,7 +54,7 @@ jobs:
           build-args: ENV_NAME=${{vars.ENV_NAME }}
           dockerfiles: |
             ./Dockerfile
-            
+          
       - name: Push to registry
         id: push-image
         uses: redhat-actions/push-to-registry@v2
